@@ -88,7 +88,7 @@ fun ServiceMenu(){
                                 painter = painterResource(item.serviceImg),
                                 contentDescription = null,
                                 colorFilter = ColorFilter.tint(Color.White),
-                                modifier = Modifier.size(40.dp)
+                                modifier = Modifier.size(35.dp)
                             )
                             Spacer(modifier = Modifier.height(8.dp) )
                             Text(item.serviceName, textAlign = TextAlign.Center, color = Color.White, maxLines = 1)
