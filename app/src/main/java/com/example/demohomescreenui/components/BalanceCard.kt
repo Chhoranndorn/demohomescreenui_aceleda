@@ -23,6 +23,8 @@ import androidx.compose.foundation.layout.statusBarsPadding
 import androidx.compose.foundation.layout.width
 import androidx.compose.foundation.shape.CircleShape
 import androidx.compose.foundation.shape.RoundedCornerShape
+import androidx.compose.material.icons.filled.Visibility
+import androidx.compose.material.icons.filled.VisibilityOff
 import androidx.compose.material3.Surface
 import androidx.compose.runtime.Composable
 import androidx.compose.runtime.getValue
@@ -74,7 +76,7 @@ Box(
                 1.5.dp,
                 Color.LightGray.copy(alpha = 0.40f)
             ),
-            shape = RoundedCornerShape(24.dp)
+            shape = RoundedCornerShape(22.dp)
         )
         .padding(12.dp)
 )
@@ -85,11 +87,16 @@ Box(
         verticalAlignment = Alignment.CenterVertically
     ) {
         Box(contentAlignment = Alignment.Center) {
-
             BalanceRing(
                 segments = listOf(
-                    RingSegment(Color.Blue, 70f),
-                    RingSegment(Color.Yellow, 30f)
+                    RingSegment(
+                        color = Color(0xFF24B7FF),
+                        value = 70f
+                    ),
+                    RingSegment(
+                        color = Color(0xFFD8A62A),
+                        value = 30f
+                    )
                 )
             )
             Column(horizontalAlignment = Alignment.CenterHorizontally) {
@@ -97,7 +104,6 @@ Box(
                     painter = painterResource(id = R.drawable.wallet),
                     contentDescription = null,
                     colorFilter = ColorFilter.tint(Color.White),
-//                    tint = Color.White,
                     modifier = Modifier
                         .size(28.dp),
 
@@ -129,11 +135,15 @@ Box(
                         ),
                     contentAlignment = Alignment.Center
                 ) {
-                    Image(
-                        painter = painterResource(R.drawable.visible),
+                    Icon(
+                        imageVector = if (isBalanceVisible)
+                            Icons.Default.Visibility
+                        else
+                            Icons.Default.VisibilityOff,
                         contentDescription = null,
+                        tint = Color.White,
                         modifier = Modifier
-                            .size(25.dp)
+                            .size(18.dp)
                             .clickable {
                                 isBalanceVisible = !isBalanceVisible
                             }
@@ -142,7 +152,8 @@ Box(
             }
             Spacer(modifier = Modifier.height(12.dp))
             Row(
-                verticalAlignment = Alignment.CenterVertically
+//                verticalAlignment = Alignment.CenterVertically
+                verticalAlignment = Alignment.Bottom
             ) {  Text("999,999.00",   color = Color.White,
                 fontSize = 18.sp,
                 fontWeight = FontWeight.Bold, modifier = Modifier.blur(
@@ -152,13 +163,14 @@ Box(
                 Text(
                     text = "៛",
                     color = Color(0xFFD8A62A),
-                    fontSize = 22.sp,
+                    fontSize = 18.sp,
                     fontWeight = FontWeight.Bold
                 )
             }
-//            Spacer(modifier = Modifier.height(12.dp))
+            Spacer(modifier = Modifier.height(8.dp))
             Row(
-                verticalAlignment = Alignment.CenterVertically
+//                verticalAlignment = Alignment.CenterVertically
+                verticalAlignment = Alignment.Bottom
             ) {
                 Text(
                     text = "999,999.00",
@@ -169,18 +181,16 @@ Box(
                             if (isBalanceVisible) 0.dp else 12.dp
                             )
                 )
-                Spacer(modifier = Modifier.width(8.dp))
-
+                Spacer(modifier = Modifier.width(6.dp))
                 Text(
                     text = "$",
                     color = Color(0xFF24B7FF),
-                    fontSize = 22.sp,
+                    fontSize = 18.sp,
                     fontWeight = FontWeight.Bold
                 )
             }
         }
     }
 }
-
     }
 }

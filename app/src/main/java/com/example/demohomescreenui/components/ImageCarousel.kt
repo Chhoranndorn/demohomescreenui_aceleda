@@ -59,14 +59,14 @@ fun SliderMenu(
             state = pagerState,
             modifier = Modifier.fillMaxWidth(),
             pageSpacing = 18.dp,
-            contentPadding = PaddingValues(horizontal = 16.dp)
+            contentPadding = PaddingValues(horizontal = 0.dp)
         ) { page ->
             Image(
                 painter = painterResource(id = imageList[page]),
                 contentDescription = "",
                 modifier = Modifier
                     .fillMaxWidth()
-                    .height(130.dp)
+                    .height(150.dp)
                     .clip(RoundedCornerShape(16.dp)),
                 contentScale = ContentScale.Crop
             )

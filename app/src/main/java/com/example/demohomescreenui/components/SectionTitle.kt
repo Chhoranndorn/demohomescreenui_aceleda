@@ -6,6 +6,7 @@ import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.graphics.Color
+import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.text.style.TextAlign
 import androidx.compose.ui.text.style.TextOverflow
 import androidx.compose.ui.unit.dp
@@ -18,10 +19,11 @@ fun SectionTitle(
 ){
     Text(
         text = title,
-        modifier = modifier.fillMaxWidth().padding(horizontal = 8.dp),
+        modifier = modifier.fillMaxWidth().padding(horizontal = 14.dp),
         color = Color.White,
         textAlign = TextAlign.Start,
         maxLines = 1,
-        fontSize = 24.sp
+        fontWeight=FontWeight.Bold,
+        fontSize = 20.sp
     )
 }

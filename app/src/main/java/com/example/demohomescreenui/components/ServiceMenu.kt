@@ -2,6 +2,8 @@ package com.example.demohomescreenui.components
 
 import android.widget.Toast
 import androidx.compose.foundation.Image
+import androidx.compose.foundation.background
+import androidx.compose.foundation.border
 import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.PaddingValues
@@ -19,13 +21,16 @@ import androidx.compose.foundation.lazy.grid.GridCells
 import androidx.compose.foundation.lazy.grid.LazyVerticalGrid
 import androidx.compose.foundation.lazy.items
 import androidx.compose.foundation.lazy.itemsIndexed
+import androidx.compose.foundation.shape.RoundedCornerShape
 import androidx.compose.material3.Card
 import androidx.compose.material3.CardDefaults
 import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
+import androidx.compose.ui.graphics.Brush
 import androidx.compose.ui.graphics.Color
+import androidx.compose.ui.graphics.ColorFilter
 import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.text.style.TextAlign
 import androidx.compose.ui.text.style.TextOverflow
@@ -46,7 +51,7 @@ fun ServiceMenu(){
 
         )
     Column(
-        modifier = Modifier.padding(8.dp)
+        modifier = Modifier.padding(horizontal = 10.dp)
     ) {
         courseList.chunked(3).forEach { rowItems ->
             Row {
@@ -54,19 +59,39 @@ fun ServiceMenu(){
                     Card(
                         modifier = Modifier
                             .weight(1f)
-                            .padding(8.dp)
+                            .padding(8.dp),
+                        colors = CardDefaults.cardColors(
+                            containerColor = Color.Transparent
+                        ),
+                        shape = RoundedCornerShape(20.dp)
                     ) {
                         Column(
                             horizontalAlignment = Alignment.CenterHorizontally,
-                            modifier = Modifier.padding(10.dp)
+                            modifier = Modifier
+                                .fillMaxWidth()
+                                .background(
+                                    brush = Brush.verticalGradient(
+                                        listOf(
+                                            Color.Black.copy(alpha = 0.60f),
+                                            Color.Black.copy(alpha = 0.30f)
+                                        )
+                                    )
+                                )
+                                .border(
+                                    width = 1.dp,
+                                    color = Color.White.copy(alpha = 0.35f),
+                                    shape = RoundedCornerShape(20.dp)
+                                )
+                                .padding(vertical = 16.dp, horizontal = 8.dp)
                         ) {
                             Image(
                                 painter = painterResource(item.serviceImg),
                                 contentDescription = null,
-                                modifier = Modifier.size(60.dp)
+                                colorFilter = ColorFilter.tint(Color.White),
+                                modifier = Modifier.size(40.dp)
                             )
-                            Text(item.serviceName, modifier = Modifier.fillMaxWidth(), textAlign = TextAlign.Center)
-
+                            Spacer(modifier = Modifier.height(8.dp) )
+                            Text(item.serviceName, textAlign = TextAlign.Center, color = Color.White, maxLines = 1)
                         }
                     }
                 }

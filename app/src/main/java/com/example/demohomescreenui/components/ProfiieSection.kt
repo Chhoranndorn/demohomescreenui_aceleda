@@ -19,7 +19,9 @@ import androidx.compose.ui.draw.clip
 import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.layout.ContentScale
 import androidx.compose.ui.res.painterResource
+import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.unit.dp
+import androidx.compose.ui.unit.sp
 import com.example.demohomescreenui.R
 
 @Composable
@@ -39,12 +41,12 @@ fun ProfileSection(){
                 .clip(CircleShape)
         )
         Column(modifier = Modifier.weight(1f).padding(horizontal =12.dp)) {
-            Text("Hello, ប៊ូរ ឆរ៉ាន់ដន",color = Color.White)
-            Row(verticalAlignment = Alignment.CenterVertically) {   Text("Profile",color= Color.White)
+            Text("Hello, Chhoranndorn",color = Color.White, fontSize = 18.sp, fontWeight = FontWeight.Bold)
+            Row(verticalAlignment = Alignment.CenterVertically) {   Text("Profile",color= Color.Gray)
                 Icon(
                     painter = painterResource(id= R.drawable.outline_arrow_forward_ios_24) , contentDescription = null,
                     modifier = Modifier.size(15.dp),
-                    tint = Color.White
+                    tint = Color.Gray
                 )}
         }
     }

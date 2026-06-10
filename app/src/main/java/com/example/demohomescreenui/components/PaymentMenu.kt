@@ -45,11 +45,10 @@ fun PaymentMenu(){
                     .weight(1f)
                     .padding(horizontal = 14.dp)
                     .height(55.dp),
-//                elevation = CardDefaults.cardElevation(6.dp),
                 colors = CardDefaults.cardColors(
                     containerColor = Color.Transparent
                 ),
-                shape = RoundedCornerShape(20.dp)
+                shape = RoundedCornerShape(18.dp)
             ) {
                 Row(
                     modifier = Modifier
@@ -65,7 +64,7 @@ fun PaymentMenu(){
                         .border(
                             width = 1.dp,
                             color = Color.White.copy(alpha = 0.35f),
-                            shape = RoundedCornerShape(20.dp)
+                            shape = RoundedCornerShape(18.dp)
                         )
                         .padding(12.dp),
                     verticalAlignment = Alignment.CenterVertically,
@@ -76,18 +75,14 @@ fun PaymentMenu(){
                         modifier = Modifier.size(35.dp),
                         colorFilter = ColorFilter.tint(Color.White),
                         )
-                    Spacer(modifier = Modifier.height(8.dp))
-
+                    Spacer(modifier = Modifier.width(8.dp))
                     Text(
                         text = item.paymentName,
-//                        maxLines = 1,
                         color = Color.White,
                         textAlign = TextAlign.Center
-
                     )
                 }
             }
         }
     }
-
 }
