@@ -1,4 +1,8 @@
 package com.example.demohomescreenui.screen
+import androidx.compose.animation.AnimatedVisibility
+import androidx.compose.animation.fadeIn
+import androidx.compose.animation.fadeOut
+import androidx.compose.animation.slideOutVertically
 import androidx.compose.foundation.Image
 import androidx.compose.foundation.background
 import androidx.compose.foundation.layout.Arrangement
@@ -12,6 +16,8 @@ import androidx.compose.foundation.layout.height
 import androidx.compose.foundation.layout.heightIn
 import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.layout.size
+import androidx.compose.foundation.lazy.LazyColumn
+import androidx.compose.foundation.lazy.rememberLazyListState
 import androidx.compose.foundation.rememberScrollState
 import androidx.compose.foundation.verticalScroll
 import androidx.compose.runtime.Composable
@@ -38,10 +44,19 @@ import com.example.demohomescreenui.components.SliderMenu
 
 @Composable
 fun HomeScreen(modifier: Modifier = Modifier) {
+    val listState = rememberLazyListState()
+
+    val profileVisible =
+        listState.firstVisibleItemIndex == 0 &&
+                listState.firstVisibleItemScrollOffset < 150
+    val showHeaderBackground =
+        listState.firstVisibleItemIndex > 0 ||
+                listState.firstVisibleItemScrollOffset > 50
+
     Box(
         modifier = Modifier.fillMaxSize()
+    ) {
 
-    ){
         Image(
             painter = painterResource(id = R.drawable.bg_hv4_main_gradient_blue),
             contentDescription = null,
@@ -49,25 +64,47 @@ fun HomeScreen(modifier: Modifier = Modifier) {
             contentScale = ContentScale.Crop
         )
 
-        Column(modifier = Modifier
-            .fillMaxSize()
-            .verticalScroll(rememberScrollState())) {
-            HeaderSection()
-            Spacer(modifier = Modifier.height(0.dp))
-            ProfileSection()
-            Spacer(modifier = Modifier.height(20.dp))
-            BalanceCard()
-            Spacer(modifier = Modifier.height(20.dp))
-            PaymentMenu()
-            Spacer(modifier = Modifier.height(10.dp))
-            ServiceMenu()
-            Spacer(modifier = Modifier.height(10.dp))
-            OtherServiceMenu()
-            Spacer(modifier = Modifier.height(10.dp))
-            SectionTitle("Recommended")
-            Spacer(modifier = Modifier.height(10.dp))
-            SliderMenu()
+        LazyColumn(
+            state = listState,
+            modifier = Modifier.fillMaxSize()
+        ) {
+
+            // Space for fixed header
+            item {
+                Spacer(modifier = Modifier.height(100.dp))
+            }
+
+            item {
+                AnimatedVisibility(
+                    visible = profileVisible,
+                    enter = fadeIn(),
+                    exit = fadeOut() + slideOutVertically()
+                ) {
+                 Spacer(modifier = Modifier.height(20.dp))
+                    ProfileSection()
+                }
+            }
+            item { Spacer(modifier = Modifier.height(20.dp)) }
+            item { BalanceCard() }
+            item { Spacer(modifier = Modifier.height(20.dp)) }
+            item { PaymentMenu() }
+            item { Spacer(modifier = Modifier.height(10.dp)) }
+            item { ServiceMenu() }
+            item { Spacer(modifier = Modifier.height(10.dp)) }
+            item { OtherServiceMenu() }
+            item { Spacer(modifier = Modifier.height(10.dp)) }
+            item { SectionTitle("Recommended") }
+            item { Spacer(modifier = Modifier.height(10.dp)) }
+            item { SliderMenu() }
+            item {
+                Spacer(modifier = Modifier.height(120.dp))
+            }
         }
+
+        HeaderSection(
+            modifier = Modifier.align(Alignment.TopCenter),
+                    showBackground = showHeaderBackground
+        )
     }
 }
 
