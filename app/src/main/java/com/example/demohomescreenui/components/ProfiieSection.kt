@@ -27,7 +27,7 @@ fun ProfileSection(){
     Row(
         modifier = Modifier
             .fillMaxWidth()
-            .padding(8.dp),
+            .padding(horizontal = 14.dp),
         verticalAlignment = Alignment.CenterVertically
     ) {
         Image(
@@ -46,10 +46,6 @@ fun ProfileSection(){
                     modifier = Modifier.size(15.dp),
                     tint = Color.White
                 )}
-
         }
-
-
-
     }
 }

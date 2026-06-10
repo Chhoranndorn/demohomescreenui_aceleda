@@ -22,13 +22,19 @@ import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.unit.dp
 import androidx.compose.material3.Icon
 import androidx.compose.material3.IconButton
+import androidx.compose.material3.Text
 import androidx.compose.ui.layout.ContentScale
+import androidx.compose.ui.text.style.TextAlign
+import androidx.compose.ui.text.style.TextOverflow
 import com.example.demohomescreenui.R
 import com.example.demohomescreenui.components.BalanceCard
 import com.example.demohomescreenui.components.HeaderSection
+import com.example.demohomescreenui.components.OtherServiceMenu
 import com.example.demohomescreenui.components.PaymentMenu
 import com.example.demohomescreenui.components.ProfileSection
+import com.example.demohomescreenui.components.SectionTitle
 import com.example.demohomescreenui.components.ServiceMenu
+import com.example.demohomescreenui.components.SliderMenu
 
 @Composable
 fun HomeScreen(modifier: Modifier = Modifier) {
@@ -47,15 +53,20 @@ fun HomeScreen(modifier: Modifier = Modifier) {
             .fillMaxSize()
             .verticalScroll(rememberScrollState())) {
             HeaderSection()
-            Spacer(modifier = Modifier.height(4.dp))
+            Spacer(modifier = Modifier.height(0.dp))
             ProfileSection()
             Spacer(modifier = Modifier.height(4.dp))
             BalanceCard()
-            Spacer(modifier = Modifier.height(4.dp))
+            Spacer(modifier = Modifier.height(10.dp))
             PaymentMenu()
-            Spacer(modifier = Modifier.height(4.dp))
+            Spacer(modifier = Modifier.height(10.dp))
             ServiceMenu()
-            Spacer(modifier = Modifier.height(4.dp))
+            Spacer(modifier = Modifier.height(10.dp))
+            OtherServiceMenu()
+            Spacer(modifier = Modifier.height(10.dp))
+            SectionTitle("Recommended")
+            Spacer(modifier = Modifier.height(10.dp))
+            SliderMenu()
         }
     }
 }

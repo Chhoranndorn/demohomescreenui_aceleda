@@ -4,6 +4,7 @@ import android.widget.Toast
 import androidx.compose.foundation.Image
 import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Column
+import androidx.compose.foundation.layout.PaddingValues
 import androidx.compose.foundation.layout.Row
 import androidx.compose.foundation.layout.Spacer
 import androidx.compose.foundation.layout.fillMaxSize
@@ -16,6 +17,7 @@ import androidx.compose.foundation.lazy.LazyColumn
 import androidx.compose.foundation.lazy.LazyRow
 import androidx.compose.foundation.lazy.grid.GridCells
 import androidx.compose.foundation.lazy.grid.LazyVerticalGrid
+import androidx.compose.foundation.lazy.items
 import androidx.compose.foundation.lazy.itemsIndexed
 import androidx.compose.material3.Card
 import androidx.compose.material3.CardDefaults
@@ -35,13 +37,18 @@ import com.example.demohomescreenui.model.ServiceItemModel
 @Composable
 fun ServiceMenu(){
     val courseList = listOf(
-        ServiceItemModel(serviceName = "Payment", serviceImg = R.drawable.qrcode),
-        ServiceItemModel(serviceName ="Mobile-Top up", serviceImg = R.drawable.qrcode),
-        ServiceItemModel(serviceName ="Mobile-Top up", serviceImg = R.drawable.qrcode),
-        ServiceItemModel(serviceName ="Mobile-Top up", serviceImg = R.drawable.qrcode),
+        ServiceItemModel(serviceName = "Cards", serviceImg = R.drawable.credit_card),
+        ServiceItemModel(serviceName ="Scan QR", serviceImg = R.drawable.qr_code_scan),
+        ServiceItemModel(serviceName ="Transfers", serviceImg = R.drawable.transfer_data),
+        ServiceItemModel(serviceName ="Deposits", serviceImg = R.drawable.time),
+        ServiceItemModel(serviceName ="Loans", serviceImg = R.drawable.loan),
+        ServiceItemModel(serviceName ="Quick Cash", serviceImg = R.drawable.money),
+
         )
-    Column {
-        courseList.chunked(2).forEach { rowItems ->
+    Column(
+        modifier = Modifier.padding(8.dp)
+    ) {
+        courseList.chunked(3).forEach { rowItems ->
             Row {
                 rowItems.forEach { item ->
                     Card(
@@ -58,58 +65,12 @@ fun ServiceMenu(){
                                 contentDescription = null,
                                 modifier = Modifier.size(60.dp)
                             )
-                            Text(item.serviceName)
+                            Text(item.serviceName, modifier = Modifier.fillMaxWidth(), textAlign = TextAlign.Center)
+
                         }
                     }
                 }
             }
-        }
-    }
-    LazyRow(
-        modifier = Modifier.fillMaxWidth()
-    ){
-        itemsIndexed(courseList) { index, item ->
-            Column(
-                modifier = Modifier.padding(8.dp),
-                horizontalAlignment = Alignment.CenterHorizontally
-            ) {
-                Card(
-                    onClick = {},
-                    modifier = Modifier
-                        .padding(8.dp)
-                        .width(80.dp),
-                    elevation = CardDefaults.cardElevation(
-                        defaultElevation = 6.dp
-                    )
-                )
-
-                {
-                    Row(
-                        modifier = Modifier
-                            .padding(6.dp),
-                        verticalAlignment = Alignment.CenterVertically
-                    ) {
-                        Spacer(modifier = Modifier.height(5.dp))
-                        Image(
-                            painter = painterResource(id = courseList[index].serviceImg),
-                            contentDescription = null,
-                            modifier = Modifier.size(60.dp)
-                        )
-
-                    }
-
-                }
-                Spacer(modifier = Modifier.height(6.dp))
-                Text(
-                    text = courseList[index].serviceName,
-                    modifier = Modifier.padding(all =4.dp),
-                    color = Color.White,
-                    textAlign = TextAlign.Center,
-                    maxLines = 2,
-                    overflow = TextOverflow.Ellipsis,
-                )
-            }
-
         }
     }
 }

@@ -25,7 +25,7 @@ fun HeaderSection(){
         modifier = Modifier
             .fillMaxWidth()
             .statusBarsPadding()
-            .padding(horizontal=8.dp),
+            .padding(horizontal=14.dp),
         verticalAlignment = Alignment.CenterVertically
     ) {
         Image(
@@ -41,6 +41,7 @@ fun HeaderSection(){
                     painter = painterResource(id= R.drawable.outline_notifications_24) , contentDescription = null,
                     tint = Color.White
                 )
+
         }
             Image(
                 painter = painterResource(id = R.drawable.qrcode),

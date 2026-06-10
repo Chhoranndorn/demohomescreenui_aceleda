@@ -15,7 +15,7 @@ fun BalanceRing(
     segments: List<RingSegment>,
     strokeWidth: Float = 12f
 ) {
-    Canvas(modifier = modifier.size(120.dp)) {
+    Canvas(modifier = modifier.size(95.dp)) {
 
         val total = segments.sumOf { it.value.toDouble() }.toFloat()
         var startAngle = -90f  // start from top
