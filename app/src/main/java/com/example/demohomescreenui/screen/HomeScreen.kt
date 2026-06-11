@@ -38,9 +38,12 @@ import com.example.demohomescreenui.components.HeaderSection
 import com.example.demohomescreenui.components.OtherServiceMenu
 import com.example.demohomescreenui.components.PaymentMenu
 import com.example.demohomescreenui.components.ProfileSection
+import com.example.demohomescreenui.components.PublicService
 import com.example.demohomescreenui.components.SectionTitle
+import com.example.demohomescreenui.components.SectionTitleRow
 import com.example.demohomescreenui.components.ServiceMenu
 import com.example.demohomescreenui.components.SliderMenu
+import com.example.demohomescreenui.components.SuggestionMenu
 import com.example.demohomescreenui.components.TourismSlider
 
 @Composable
@@ -83,18 +86,25 @@ fun HomeScreen(modifier: Modifier = Modifier) {
             item { Spacer(modifier = Modifier.height(10.dp)) }
             item { OtherServiceMenu() }
             item { Spacer(modifier = Modifier.height(10.dp)) }
-            item { SectionTitle("Recommended") }
+            item { SectionTitle("Recommended", modifier = Modifier.padding(start = 12.dp)
+            ) }
             item { Spacer(modifier = Modifier.height(10.dp)) }
             item { SliderMenu() }
             item {
                 Spacer(modifier = Modifier.height(10.dp))}
-            item { SectionTitle("Cambodia Tourism", true) }
+            item { SectionTitle("Cambodia Tourism", true, modifier = Modifier.padding(start = 12.dp)) }
             item { Spacer(modifier = Modifier.height(10.dp))}
             item { TourismSlider() }
-            item { Spacer(modifier = Modifier.height(100.dp))}
+            item { Spacer(modifier = Modifier.height(10.dp))}
+            item { Spacer(modifier = Modifier.height(10.dp))}
+            item { PublicService() }
+            item { Spacer(modifier = Modifier.height(10.dp))}
+            item { SectionTitle("Suggestions", showArrow = true, modifier = Modifier.padding(start = 12.dp))}
+            item { Spacer(modifier = Modifier.height(10.dp))}
+            item { SuggestionMenu() }
+            item { Spacer(modifier = Modifier.height(200.dp))}
 
         }
-
         HeaderSection(
             modifier = Modifier.align(Alignment.TopCenter),
                     showBackground = showHeaderBackground

@@ -1,9 +1,12 @@
 package com.example.demohomescreenui.components
 
+import androidx.compose.foundation.clickable
 import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Row
+import androidx.compose.foundation.layout.Spacer
 import androidx.compose.foundation.layout.fillMaxWidth
 import androidx.compose.foundation.layout.padding
+import androidx.compose.foundation.layout.width
 import androidx.compose.material.icons.Icons
 import androidx.compose.material.icons.filled.KeyboardArrowRight
 import androidx.compose.material3.Icon
@@ -22,13 +25,14 @@ import androidx.compose.ui.unit.sp
 fun SectionTitle(
     title: String,
     showArrow: Boolean = false,
+    onClick: (()-> Unit)? = null,
     modifier: Modifier = Modifier
 ){
     Row(
         modifier = modifier
-            .fillMaxWidth()
-            .padding(horizontal = 14.dp),
-        horizontalArrangement = Arrangement.Start,
+            .clickable {
+            onClick?.invoke()
+        },
         verticalAlignment = Alignment.CenterVertically
 
     ) {
@@ -39,6 +43,7 @@ fun SectionTitle(
             fontSize = 20.sp
         )
         if(showArrow){
+            Spacer(modifier = Modifier.width(4.dp))
             Icon(
                 imageVector = Icons.Default.KeyboardArrowRight,
                 contentDescription = null,

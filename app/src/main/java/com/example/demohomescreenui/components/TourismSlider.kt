@@ -194,14 +194,15 @@ fun TourismSlider() {
                             Color.Gray.copy(alpha = 0.5f),
                     label = ""
                 )
-
                 Box(
                     modifier = Modifier
                         .padding(horizontal = 3.dp)
-                        .height(8.dp)
+                        .height(6.dp)
                         .width(width)
-                        .clip(RoundedCornerShape(50))
-                        .background(color)
+                        .background(
+                            color = color,
+                            shape = RoundedCornerShape(80)
+                        )
                 )
             }
         }
