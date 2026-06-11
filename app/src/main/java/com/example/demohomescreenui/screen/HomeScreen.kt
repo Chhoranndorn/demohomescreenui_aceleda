@@ -41,6 +41,7 @@ import com.example.demohomescreenui.components.ProfileSection
 import com.example.demohomescreenui.components.SectionTitle
 import com.example.demohomescreenui.components.ServiceMenu
 import com.example.demohomescreenui.components.SliderMenu
+import com.example.demohomescreenui.components.TourismSlider
 
 @Composable
 fun HomeScreen(modifier: Modifier = Modifier) {
@@ -86,8 +87,12 @@ fun HomeScreen(modifier: Modifier = Modifier) {
             item { Spacer(modifier = Modifier.height(10.dp)) }
             item { SliderMenu() }
             item {
-                Spacer(modifier = Modifier.height(120.dp))
-            }
+                Spacer(modifier = Modifier.height(10.dp))}
+            item { SectionTitle("Cambodia Tourism", true) }
+            item { Spacer(modifier = Modifier.height(10.dp))}
+            item { TourismSlider() }
+            item { Spacer(modifier = Modifier.height(100.dp))}
+
         }
 
         HeaderSection(

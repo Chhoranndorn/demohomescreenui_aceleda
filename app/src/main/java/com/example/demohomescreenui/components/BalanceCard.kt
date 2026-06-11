@@ -152,7 +152,6 @@ Box(
             }
             Spacer(modifier = Modifier.height(12.dp))
             Row(
-//                verticalAlignment = Alignment.CenterVertically
                 verticalAlignment = Alignment.Bottom
             ) {  Text("999,999.00",   color = Color.White,
                 fontSize = 18.sp,
@@ -169,7 +168,6 @@ Box(
             }
             Spacer(modifier = Modifier.height(8.dp))
             Row(
-//                verticalAlignment = Alignment.CenterVertically
                 verticalAlignment = Alignment.Bottom
             ) {
                 Text(

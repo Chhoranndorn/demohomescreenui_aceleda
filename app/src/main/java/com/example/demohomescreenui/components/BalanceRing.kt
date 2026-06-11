@@ -18,7 +18,7 @@ fun BalanceRing(
     Canvas(modifier = modifier.size(95.dp)) {
 
         val total = segments.sumOf { it.value.toDouble() }.toFloat()
-        var startAngle = -90f  // start from top
+        var startAngle = -90f
 
         segments.forEach { segment ->
             val sweepAngle = (segment.value / total) * 360f
@@ -33,7 +33,6 @@ fun BalanceRing(
                     cap = StrokeCap.Round
                 )
             )
-
             startAngle += sweepAngle
         }
     }

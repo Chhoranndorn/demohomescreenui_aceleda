@@ -31,26 +31,19 @@ import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
 import com.example.demohomescreenui.R
-
-data class NavItem(
-    val title: String,
-    @DrawableRes val icon: Int
-)
-
+import com.example.demohomescreenui.model.NavItem
 @Composable
 fun CustomBottomBar(
     modifier: Modifier = Modifier,
     selectedIndex: Int,
     onItemSelected: (Int) -> Unit
 ) {
-
     val items = listOf(
         NavItem("Home", R.drawable.home_icon_silhouette),
         NavItem("Favorites",R.drawable.wishlist),
         NavItem("LiveChat", R.drawable.live_chat),
         NavItem("Menu", R.drawable.menu)
     )
-
     Box(
         modifier = modifier
             .padding(horizontal = 16.dp, vertical = 10.dp)

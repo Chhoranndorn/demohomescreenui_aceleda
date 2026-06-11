@@ -50,7 +50,6 @@ fun SliderMenu(
 
     Column(
         modifier
-            .defaultMinSize(minHeight = 300.dp)
             .fillMaxWidth()
             .padding(horizontal = 16.dp)
     ) {

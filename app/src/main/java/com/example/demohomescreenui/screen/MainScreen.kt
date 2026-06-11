@@ -48,7 +48,7 @@ fun MainScreen() {
             modifier = Modifier
                 .align(Alignment.BottomCenter)
                 .fillMaxWidth()
-                .padding(horizontal = 0.dp, vertical = 12.dp)
+                .padding(vertical = 12.dp)
         ) {
 
             Row(
