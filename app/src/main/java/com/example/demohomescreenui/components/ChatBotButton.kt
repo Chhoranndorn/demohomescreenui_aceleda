@@ -1,7 +1,6 @@
 package com.example.demohomescreenui.components
 
 import androidx.compose.foundation.Image
-import androidx.compose.foundation.R
 import androidx.compose.foundation.background
 import androidx.compose.foundation.border
 import androidx.compose.foundation.clickable
@@ -36,11 +35,11 @@ fun ChatBotButton(
                 .background(
                     Color(0xFF263C5C).copy(alpha = 0.4f)
                 )
-                .border(
-                    1.dp,
-                    Color.White.copy(alpha = 0.25f),
-                    CircleShape
-                )
+//                .border(
+//                    1.3.dp,
+//                    Color(0xFF5d6386).copy(alpha = 0.90f),
+//                    CircleShape
+//                )
         )
         Image(
             painter = painterResource(id = com.example.demohomescreenui.R.drawable.robot),

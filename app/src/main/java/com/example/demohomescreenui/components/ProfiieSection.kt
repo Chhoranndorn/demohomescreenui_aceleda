@@ -4,7 +4,10 @@ import androidx.compose.foundation.Image
 import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.Row
+import androidx.compose.foundation.layout.Spacer
 import androidx.compose.foundation.layout.fillMaxWidth
+import androidx.compose.foundation.layout.height
+import androidx.compose.foundation.layout.heightIn
 import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.layout.size
 import androidx.compose.foundation.layout.width
@@ -34,18 +37,23 @@ fun ProfileSection(){
     ) {
         Image(
             painter = painterResource(id = R.drawable.profile_image),
-            contentDescription = "My imported image",
+            contentDescription = null,
             contentScale = ContentScale.Crop,
             modifier = Modifier
-                .size(50.dp)
+                .size(45.dp)
                 .clip(CircleShape)
         )
         Column(modifier = Modifier.weight(1f).padding(horizontal =12.dp)) {
-            Text("Hello, Chhoranndorn",color = Color.White, fontSize = 18.sp, fontWeight = FontWeight.Bold)
-            Row(verticalAlignment = Alignment.CenterVertically) {   Text("Profile",color= Color.Gray)
+            Text("Hello, Chhoranndorn",color = Color.White, fontSize = 16.sp, fontWeight = FontWeight.Bold)
+            Spacer(modifier = Modifier.height(4.dp))
+            Row(verticalAlignment = Alignment.CenterVertically) {
+
+                Text("Profile",color= Color.Gray, fontSize = 12.sp)
+                Spacer(modifier = Modifier.width(4.dp))
+
                 Icon(
                     painter = painterResource(id= R.drawable.outline_arrow_forward_ios_24) , contentDescription = null,
-                    modifier = Modifier.size(15.dp),
+                    modifier = Modifier.size(12.dp),
                     tint = Color.Gray
                 )}
         }

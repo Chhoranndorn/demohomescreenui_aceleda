@@ -67,12 +67,13 @@ fun HeaderSection(
             Row(
                 modifier = Modifier
                     .weight(1f)
-                    .padding(horizontal = 8.dp),
+                    .padding(horizontal = 14.dp),
                 horizontalArrangement = Arrangement.End
             ) {
                 Icon(
                     painter = painterResource(id = R.drawable.outline_notifications_24),
                     contentDescription = null,
+                    modifier = Modifier.size(28.dp),
                     tint = Color.White
                 )
             }

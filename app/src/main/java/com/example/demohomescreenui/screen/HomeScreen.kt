@@ -56,24 +56,13 @@ fun HomeScreen(modifier: Modifier = Modifier) {
     Box(
         modifier = Modifier.fillMaxSize()
     ) {
-
-        Image(
-            painter = painterResource(id = R.drawable.bg_hv4_main_gradient_blue),
-            contentDescription = null,
-            modifier = Modifier.fillMaxSize(),
-            contentScale = ContentScale.Crop
-        )
-
         LazyColumn(
             state = listState,
             modifier = Modifier.fillMaxSize()
         ) {
-
-            // Space for fixed header
             item {
-                Spacer(modifier = Modifier.height(100.dp))
+                Spacer(modifier = Modifier.height(120.dp))
             }
-
             item {
                 AnimatedVisibility(
                     visible = profileVisible,

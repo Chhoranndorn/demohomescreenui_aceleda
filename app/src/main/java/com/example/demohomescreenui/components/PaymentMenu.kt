@@ -36,14 +36,15 @@ fun PaymentMenu(){
         PaymentItemList(paymentName ="Mobile-Top up", paymentImg =  R.drawable.smartphone),
     )
     Row(
-        modifier = Modifier.fillMaxWidth()
+        modifier = Modifier.fillMaxWidth().padding(horizontal = 8.dp)
     ) {
         courseList.forEach { item ->
 
             Card(
+                onClick = {},
                 modifier = Modifier
                     .weight(1f)
-                    .padding(horizontal = 14.dp)
+                    .padding(horizontal =6.dp)
                     .height(55.dp),
                 colors = CardDefaults.cardColors(
                     containerColor = Color.Transparent
@@ -62,8 +63,8 @@ fun PaymentMenu(){
                             )
                         )
                         .border(
-                            width = 1.dp,
-                            color = Color.White.copy(alpha = 0.35f),
+                            1.3.dp,
+                            Color(0xFF5d6386).copy(alpha = 0.90f),
                             shape = RoundedCornerShape(18.dp)
                         )
                         .padding(12.dp),

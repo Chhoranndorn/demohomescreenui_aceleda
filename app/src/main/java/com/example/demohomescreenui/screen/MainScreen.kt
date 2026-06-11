@@ -1,5 +1,7 @@
 package com.example.demohomescreenui.screen
 
+import androidx.compose.foundation.Image
+import androidx.compose.foundation.background
 import androidx.compose.foundation.layout.Box
 import androidx.compose.foundation.layout.Row
 import androidx.compose.foundation.layout.Spacer
@@ -18,7 +20,10 @@ import androidx.compose.runtime.setValue
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.graphics.Color
+import androidx.compose.ui.layout.ContentScale
+import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.unit.dp
+import com.example.demohomescreenui.R
 import com.example.demohomescreenui.components.ChatBotButton
 import com.example.demohomescreenui.components.CustomBottomBar
 @Composable
@@ -27,6 +32,12 @@ fun MainScreen() {
     var selectedTab by remember { mutableIntStateOf(0) }
 
     Box(modifier = Modifier.fillMaxSize()) {
+        Image(
+            painter = painterResource(R.drawable.bg_hv4_main_gradient_blue),
+            contentDescription = null,
+            modifier = Modifier.fillMaxSize().background(Color.Black),
+            contentScale = ContentScale.Crop
+        )
         when (selectedTab) {
             0 -> HomeScreen()
             1 -> FavoriteScreen()

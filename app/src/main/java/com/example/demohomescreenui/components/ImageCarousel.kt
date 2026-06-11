@@ -67,7 +67,7 @@ fun SliderMenu(
                 modifier = Modifier
                     .fillMaxWidth()
                     .height(150.dp)
-                    .clip(RoundedCornerShape(16.dp)),
+                    .clip(RoundedCornerShape(18.dp)),
                 contentScale = ContentScale.Crop
             )
         }

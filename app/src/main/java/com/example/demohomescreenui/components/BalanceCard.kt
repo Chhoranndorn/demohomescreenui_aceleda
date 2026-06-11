@@ -56,7 +56,7 @@ fun BalanceCard(){
             .fillMaxWidth()
             .statusBarsPadding()
             .padding(horizontal = 14.dp),
-        shape = RoundedCornerShape(16.dp),
+        shape = RoundedCornerShape(18.dp),
         color = Color.Transparent
     ) {
 Box(
@@ -69,14 +69,14 @@ Box(
                     Color.Black.copy(alpha = 0.30f),
                 )
             ),
-            shape = RoundedCornerShape(24.dp)
+            shape = RoundedCornerShape(18.dp)
         )
         .border(
             BorderStroke(
-                1.5.dp,
-                Color.LightGray.copy(alpha = 0.40f)
+                1.3.dp,
+                Color(0xFF5d6386).copy(alpha = 0.90f)
             ),
-            shape = RoundedCornerShape(22.dp)
+            shape = RoundedCornerShape(18.dp)
         )
         .padding(12.dp)
 )
@@ -124,11 +124,11 @@ Box(
             Row(
                 verticalAlignment = Alignment.CenterVertically
             ) {   Text("Total Balances", color = Color.White.copy(alpha = 0.9f),
-                fontSize = 16.sp)
+                fontSize = 14.sp)
                 Spacer(modifier = Modifier.width(12.dp))
                 Box(
                     modifier = Modifier
-                        .size(42.dp)
+                        .size(28.dp)
                         .clip(CircleShape)
                         .background(
                             Color(0xFF89A6FF).copy(alpha = 0.6f)
@@ -143,7 +143,7 @@ Box(
                         contentDescription = null,
                         tint = Color.White,
                         modifier = Modifier
-                            .size(18.dp)
+                            .size(12.dp)
                             .clickable {
                                 isBalanceVisible = !isBalanceVisible
                             }

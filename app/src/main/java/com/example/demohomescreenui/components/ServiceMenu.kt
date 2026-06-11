@@ -57,13 +57,14 @@ fun ServiceMenu(){
             Row {
                 rowItems.forEach { item ->
                     Card(
+                        onClick = {},
                         modifier = Modifier
                             .weight(1f)
-                            .padding(8.dp),
+                            .padding(6.dp),
                         colors = CardDefaults.cardColors(
                             containerColor = Color.Transparent
                         ),
-                        shape = RoundedCornerShape(20.dp)
+                        shape = RoundedCornerShape(18.dp)
                     ) {
                         Column(
                             horizontalAlignment = Alignment.CenterHorizontally,
@@ -78,20 +79,23 @@ fun ServiceMenu(){
                                     )
                                 )
                                 .border(
-                                    width = 1.dp,
-                                    color = Color.White.copy(alpha = 0.35f),
-                                    shape = RoundedCornerShape(20.dp)
+                                    1.3.dp,
+                                    Color(0xFF5d6386).copy(alpha = 0.90f),
+                                    shape = RoundedCornerShape(18.dp)
                                 )
                                 .padding(vertical = 16.dp, horizontal = 8.dp)
                         ) {
+                            Spacer(modifier = Modifier.height(8.dp))
+
                             Image(
                                 painter = painterResource(item.serviceImg),
                                 contentDescription = null,
                                 colorFilter = ColorFilter.tint(Color.White),
-                                modifier = Modifier.size(35.dp)
+                                modifier = Modifier.size(30.dp)
                             )
-                            Spacer(modifier = Modifier.height(8.dp) )
+                            Spacer(modifier = Modifier.height(12.dp) )
                             Text(item.serviceName, textAlign = TextAlign.Center, color = Color.White, maxLines = 1)
+                            Spacer(modifier = Modifier.height(8.dp))
                         }
                     }
                 }

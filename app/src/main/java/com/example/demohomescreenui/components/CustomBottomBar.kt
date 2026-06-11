@@ -1,5 +1,6 @@
 package com.example.demohomescreenui.components
 
+import androidx.annotation.DrawableRes
 import androidx.compose.foundation.background
 import androidx.compose.foundation.clickable
 import androidx.compose.foundation.layout.Arrangement
@@ -26,12 +27,14 @@ import androidx.compose.ui.Modifier
 import androidx.compose.ui.draw.clip
 import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.graphics.vector.ImageVector
+import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
+import com.example.demohomescreenui.R
 
 data class NavItem(
     val title: String,
-    val icon: ImageVector
+    @DrawableRes val icon: Int
 )
 
 @Composable
@@ -42,10 +45,10 @@ fun CustomBottomBar(
 ) {
 
     val items = listOf(
-        NavItem("Home", Icons.Default.Home),
-        NavItem("Favorites", Icons.Default.FavoriteBorder),
-        NavItem("LiveChat", Icons.Default.ChatBubbleOutline),
-        NavItem("Menu", Icons.Default.Menu)
+        NavItem("Home", R.drawable.home_icon_silhouette),
+        NavItem("Favorites",R.drawable.wishlist),
+        NavItem("LiveChat", R.drawable.live_chat),
+        NavItem("Menu", R.drawable.menu)
     )
 
     Box(
@@ -71,7 +74,7 @@ fun CustomBottomBar(
                         .clip(RoundedCornerShape(35.dp))
                         .background(
                             if (selected)
-                                Color(0xFF435257)
+                                Color(0xFF3e505c)
                             else
                                 Color.Transparent
                         )
@@ -80,7 +83,7 @@ fun CustomBottomBar(
                 ) {
 
                     Icon(
-                        imageVector = item.icon,
+                        painter = painterResource(id = item.icon),
                         contentDescription = item.title,
                         tint = if (selected)
                             Color(0xFFD4AF37)
@@ -89,7 +92,7 @@ fun CustomBottomBar(
                         modifier = Modifier.size(24.dp)
                     )
 
-                    Spacer(modifier = Modifier.height(2.dp))
+                    Spacer(modifier = Modifier.height(4.dp))
 
                     Text(
                         text = item.title,
