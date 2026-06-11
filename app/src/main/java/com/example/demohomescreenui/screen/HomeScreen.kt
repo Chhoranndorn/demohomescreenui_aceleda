@@ -39,6 +39,7 @@ import com.example.demohomescreenui.components.OtherServiceMenu
 import com.example.demohomescreenui.components.PaymentMenu
 import com.example.demohomescreenui.components.ProfileSection
 import com.example.demohomescreenui.components.PublicService
+import com.example.demohomescreenui.components.RecentTransaction
 import com.example.demohomescreenui.components.SectionTitle
 import com.example.demohomescreenui.components.SectionTitleRow
 import com.example.demohomescreenui.components.ServiceMenu
@@ -92,16 +93,23 @@ fun HomeScreen(modifier: Modifier = Modifier) {
             item { SliderMenu() }
             item {
                 Spacer(modifier = Modifier.height(10.dp))}
-            item { SectionTitle("Cambodia Tourism", true, modifier = Modifier.padding(start = 12.dp)) }
+            item { SectionTitle("Cambodia Tourism", true, modifier = Modifier.padding(start = 12.dp), onClick = {}) }
             item { Spacer(modifier = Modifier.height(10.dp))}
             item { TourismSlider() }
             item { Spacer(modifier = Modifier.height(10.dp))}
             item { Spacer(modifier = Modifier.height(10.dp))}
             item { PublicService() }
             item { Spacer(modifier = Modifier.height(10.dp))}
-            item { SectionTitle("Suggestions", showArrow = true, modifier = Modifier.padding(start = 12.dp))}
+            item { SectionTitle("Suggestions", showArrow = true, modifier = Modifier.padding(start = 12.dp), onClick = {})}
             item { Spacer(modifier = Modifier.height(10.dp))}
             item { SuggestionMenu() }
+            item { Spacer(modifier = Modifier.height(10.dp))}
+            item { SectionTitle("Recent Transactions", modifier = Modifier.padding(start = 12.dp))}
+            item { Spacer(modifier = Modifier.height(10.dp))}
+            item { RecentTransaction() }
+            item { Spacer(modifier = Modifier.height(10.dp))}
+            item { SectionTitle("Other News", showArrow = true, modifier = Modifier.padding(start = 12.dp), onClick = {})}
+            item { Spacer(modifier = Modifier.height(10.dp))}
             item { Spacer(modifier = Modifier.height(200.dp))}
 
         }

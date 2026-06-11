@@ -25,16 +25,19 @@ import androidx.compose.ui.unit.sp
 fun SectionTitle(
     title: String,
     showArrow: Boolean = false,
-    onClick: (()-> Unit)? = null,
+    onClick: (() -> Unit)? = null,
     modifier: Modifier = Modifier
-){
-    Row(
-        modifier = modifier
-            .clickable {
-            onClick?.invoke()
-        },
-        verticalAlignment = Alignment.CenterVertically
+) {
 
+    val clickableModifier = if (onClick != null) {
+        Modifier.clickable { onClick() }
+    } else {
+        Modifier
+    }
+
+    Row(
+        modifier = modifier.then(clickableModifier),
+        verticalAlignment = Alignment.CenterVertically
     ) {
         Text(
             text = title,
@@ -42,7 +45,8 @@ fun SectionTitle(
             fontWeight = FontWeight.Bold,
             fontSize = 20.sp
         )
-        if(showArrow){
+
+        if (showArrow) {
             Spacer(modifier = Modifier.width(4.dp))
             Icon(
                 imageVector = Icons.Default.KeyboardArrowRight,

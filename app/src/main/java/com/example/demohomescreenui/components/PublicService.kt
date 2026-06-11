@@ -32,6 +32,7 @@ val publicIcons = listOf(
     ) {
 
         SectionTitleRow(
+
             leftTitle = "Public Service",
             rightTitle = "Other Services",
             onLeftClick = {},
