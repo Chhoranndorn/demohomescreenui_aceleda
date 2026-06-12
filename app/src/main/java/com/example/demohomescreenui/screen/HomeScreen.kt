@@ -33,6 +33,7 @@ import androidx.compose.ui.layout.ContentScale
 import androidx.compose.ui.text.style.TextAlign
 import androidx.compose.ui.text.style.TextOverflow
 import com.example.demohomescreenui.R
+import com.example.demohomescreenui.components.Appearance
 import com.example.demohomescreenui.components.BalanceCard
 import com.example.demohomescreenui.components.HeaderSection
 import com.example.demohomescreenui.components.OtherNews
@@ -118,7 +119,10 @@ fun HomeScreen(modifier: Modifier = Modifier) {
             item {Spacer(modifier= modifier.height(10.dp))}
             item { SpecialOffers() }
             item { Spacer(modifier = Modifier.height(10.dp))}
-            item { Spacer(modifier = Modifier.height(200.dp))}
+            item { SectionTitle("Appearance")}
+            item { Spacer(modifier= modifier.height(10.dp))}
+            item { Appearance() }
+            item { Spacer(modifier = Modifier.height(230.dp))}
 
         }
         HeaderSection(

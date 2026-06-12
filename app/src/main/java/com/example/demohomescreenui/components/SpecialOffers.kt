@@ -70,7 +70,7 @@ fun SpecialOffers(){
                                 contentScale = ContentScale.Crop,
                                 modifier = Modifier.fillMaxWidth().height(height = 160.dp)
                             )
-                            Text("Enjoy US$6 Cashback Per Month", color = Color(0xFF2b3a59), modifier = Modifier.padding(all = 8.dp), fontSize = 14.sp, fontWeight = FontWeight.Normal)
+                            Text("Enjoy US$6 Cashback Per Month", color = Color(0xFF2b3a59), modifier = Modifier.padding(horizontal = 10.dp, vertical = 6.dp), fontSize = 14.sp, fontWeight = FontWeight.Normal)
                         }
                     }
                 }
