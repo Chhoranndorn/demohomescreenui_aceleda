@@ -45,6 +45,7 @@ import com.example.demohomescreenui.components.SectionTitle
 import com.example.demohomescreenui.components.SectionTitleRow
 import com.example.demohomescreenui.components.ServiceMenu
 import com.example.demohomescreenui.components.SliderMenu
+import com.example.demohomescreenui.components.SpecialOffers
 import com.example.demohomescreenui.components.SuggestionMenu
 import com.example.demohomescreenui.components.TourismSlider
 
@@ -66,9 +67,9 @@ fun HomeScreen(modifier: Modifier = Modifier) {
             state = listState,
             modifier = Modifier.fillMaxSize()
         ) {
-            item {
-                Spacer(modifier = Modifier.height(120.dp))
-            }
+//            item {
+//                Spacer(modifier = Modifier.height(120.dp))
+//            }
             item {
                 AnimatedVisibility(
                     visible = profileVisible,
@@ -88,8 +89,8 @@ fun HomeScreen(modifier: Modifier = Modifier) {
             item { Spacer(modifier = Modifier.height(10.dp)) }
 //            item { OtherServiceMenu() }
             item { Spacer(modifier = Modifier.height(10.dp)) }
-            item { SectionTitle("Recommended", modifier = Modifier.padding(start = 12.dp)
-            ) }
+//            item { SectionTitle("Recommended", modifier = Modifier.padding(start = 12.dp)
+//            ) }
             item { Spacer(modifier = Modifier.height(10.dp)) }
 //            item { SliderMenu() }
             item {
@@ -107,11 +108,16 @@ fun HomeScreen(modifier: Modifier = Modifier) {
             item { Spacer(modifier = Modifier.height(10.dp))}
             item { SectionTitle("Recent Transactions", modifier = Modifier.padding(start = 12.dp))}
             item { Spacer(modifier = Modifier.height(10.dp))}
-            item { RecentTransaction() }
+//            item { RecentTransaction() }
             item { Spacer(modifier = Modifier.height(10.dp))}
             item { SectionTitle("Other News", showArrow = true, modifier = Modifier.padding(start = 12.dp), onClick = {})}
             item { Spacer(modifier = Modifier.height(10.dp))}
             item { OtherNews() }
+            item { Spacer(modifier = modifier.height(10.dp)) }
+            item { SectionTitle("Special Offers", showArrow = true, modifier = Modifier.padding(start = 12.dp), onClick = {})}
+            item {Spacer(modifier= modifier.height(10.dp))}
+            item { SpecialOffers() }
+            item { Spacer(modifier = Modifier.height(10.dp))}
             item { Spacer(modifier = Modifier.height(200.dp))}
 
         }
