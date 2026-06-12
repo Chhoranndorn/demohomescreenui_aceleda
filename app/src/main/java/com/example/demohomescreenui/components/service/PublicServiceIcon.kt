@@ -6,57 +6,51 @@ import androidx.compose.foundation.border
 import androidx.compose.foundation.layout.Box
 import androidx.compose.foundation.layout.aspectRatio
 import androidx.compose.foundation.layout.fillMaxSize
-import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.layout.size
+import androidx.compose.foundation.shape.CircleShape
 import androidx.compose.foundation.shape.RoundedCornerShape
-import androidx.compose.material3.Card
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.draw.clip
 import androidx.compose.ui.graphics.Color
-import androidx.compose.ui.layout.ContentScale
-import androidx.compose.ui.layout.layout
 import androidx.compose.ui.res.painterResource
-import androidx.compose.ui.unit.Dp
 import androidx.compose.ui.unit.dp
+
 @Composable
-fun SmallServiceIcon(
+fun PublicServiceIcon(
     drawable: Int,
-    modifier: Modifier = Modifier,
-    showBorder: Boolean = false,
-    backgroundColor: Color = Color.Transparent,
-    backgroundSize: Dp = 20.dp,
-    iconSize: Dp = 28.dp
+    showBorder: Boolean = true
 ) {
     Box(
-        modifier = modifier
+        modifier = Modifier
             .aspectRatio(1f)
-            .clip(RoundedCornerShape(10.dp))
+            .clip(RoundedCornerShape(14.dp))
             .background(Color.White),
         contentAlignment = Alignment.Center
     ) {
+
         Box(
             modifier = Modifier
-                .size(backgroundSize)
-                .clip(RoundedCornerShape(10.dp))
-                .background(backgroundColor)
+                .size(55.dp)
                 .then(
                     if (showBorder) {
                         Modifier.border(
-                            1.dp,
-                            Color.LightGray,
-                            RoundedCornerShape(10.dp)
+                            width = 1.dp,
+                            color = Color.LightGray,
+                            shape = CircleShape
                         )
-                    } else Modifier
+                    } else {
+                        Modifier
+                    }
                 ),
             contentAlignment = Alignment.Center
         ) {
             Image(
-                painter = painterResource(id = drawable),
+                painter = painterResource(drawable),
                 contentDescription = null,
-                modifier = Modifier.size(iconSize),
-                contentScale = ContentScale.Fit
+//                modifier = Modifier.size(35.dp).fillMaxSize().clip(CircleShape)
+                modifier = Modifier.size(35.dp)
             )
         }
     }

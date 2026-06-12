@@ -5,12 +5,14 @@ import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.Row
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
+import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.unit.dp
+import com.example.demohomescreenui.model.SmallIconItem
 
 @Composable
 fun SmallGrid(
-    icons: List<Int>,
-    modifier: Modifier = Modifier
+    items: List<SmallIconItem>,
+    modifier: Modifier = Modifier,
 ) {
     Column(
         modifier = modifier,
@@ -21,27 +23,34 @@ fun SmallGrid(
             horizontalArrangement = Arrangement.spacedBy(8.dp)
         ) {
             SmallServiceIcon(
-                drawable = icons[0],
-                modifier = Modifier.weight(1f)
+                drawable = items[0].drawable,
+                modifier = Modifier.weight(1f),
+                backgroundColor =items[0].backgroundColor,
+                showBorder = items[0].showBorder
             )
 
             SmallServiceIcon(
-                drawable = icons[1],
-                modifier = Modifier.weight(1f)
+                drawable = items[1].drawable,
+                modifier = Modifier.weight(1f),
+                backgroundColor =items[1].backgroundColor,
+                showBorder = items[1].showBorder
             )
         }
-
         Row(
             horizontalArrangement = Arrangement.spacedBy(8.dp)
         ) {
             SmallServiceIcon(
-                drawable = icons[2],
-                modifier = Modifier.weight(1f)
+                drawable = items[2].drawable,
+                modifier = Modifier.weight(1f),
+                backgroundColor =items[2].backgroundColor,
+                showBorder = items[2].showBorder
             )
 
             SmallServiceIcon(
-                drawable = icons[3],
-                modifier = Modifier.weight(1f)
+                drawable = items[3].drawable,
+                modifier = Modifier.weight(1f),
+                backgroundColor =items[3].backgroundColor,
+                showBorder = items[3].showBorder
             )
         }
     }

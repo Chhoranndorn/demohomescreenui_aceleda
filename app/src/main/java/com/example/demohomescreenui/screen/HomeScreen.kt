@@ -35,6 +35,7 @@ import androidx.compose.ui.text.style.TextOverflow
 import com.example.demohomescreenui.R
 import com.example.demohomescreenui.components.BalanceCard
 import com.example.demohomescreenui.components.HeaderSection
+import com.example.demohomescreenui.components.OtherNews
 import com.example.demohomescreenui.components.OtherServiceMenu
 import com.example.demohomescreenui.components.PaymentMenu
 import com.example.demohomescreenui.components.ProfileSection
@@ -74,35 +75,35 @@ fun HomeScreen(modifier: Modifier = Modifier) {
                     enter = fadeIn(),
                     exit = fadeOut() + slideOutVertically()
                 ) {
-                 Spacer(modifier = Modifier.height(20.dp))
-                    ProfileSection()
+//                 Spacer(modifier = Modifier.height(20.dp))
+//                    ProfileSection()
                 }
             }
             item { Spacer(modifier = Modifier.height(20.dp)) }
-            item { BalanceCard() }
+//            item { BalanceCard() }
             item { Spacer(modifier = Modifier.height(20.dp)) }
-            item { PaymentMenu() }
+//            item { PaymentMenu() }
             item { Spacer(modifier = Modifier.height(10.dp)) }
-            item { ServiceMenu() }
+//            item { ServiceMenu() }
             item { Spacer(modifier = Modifier.height(10.dp)) }
-            item { OtherServiceMenu() }
+//            item { OtherServiceMenu() }
             item { Spacer(modifier = Modifier.height(10.dp)) }
             item { SectionTitle("Recommended", modifier = Modifier.padding(start = 12.dp)
             ) }
             item { Spacer(modifier = Modifier.height(10.dp)) }
-            item { SliderMenu() }
+//            item { SliderMenu() }
             item {
                 Spacer(modifier = Modifier.height(10.dp))}
             item { SectionTitle("Cambodia Tourism", true, modifier = Modifier.padding(start = 12.dp), onClick = {}) }
             item { Spacer(modifier = Modifier.height(10.dp))}
-            item { TourismSlider() }
+//            item { TourismSlider() }
             item { Spacer(modifier = Modifier.height(10.dp))}
             item { Spacer(modifier = Modifier.height(10.dp))}
-            item { PublicService() }
+//            item { PublicService() }
             item { Spacer(modifier = Modifier.height(10.dp))}
             item { SectionTitle("Suggestions", showArrow = true, modifier = Modifier.padding(start = 12.dp), onClick = {})}
             item { Spacer(modifier = Modifier.height(10.dp))}
-            item { SuggestionMenu() }
+//            item { SuggestionMenu() }
             item { Spacer(modifier = Modifier.height(10.dp))}
             item { SectionTitle("Recent Transactions", modifier = Modifier.padding(start = 12.dp))}
             item { Spacer(modifier = Modifier.height(10.dp))}
@@ -110,6 +111,7 @@ fun HomeScreen(modifier: Modifier = Modifier) {
             item { Spacer(modifier = Modifier.height(10.dp))}
             item { SectionTitle("Other News", showArrow = true, modifier = Modifier.padding(start = 12.dp), onClick = {})}
             item { Spacer(modifier = Modifier.height(10.dp))}
+            item { OtherNews() }
             item { Spacer(modifier = Modifier.height(200.dp))}
 
         }

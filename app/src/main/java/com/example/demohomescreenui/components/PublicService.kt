@@ -9,30 +9,19 @@ import androidx.compose.foundation.layout.height
 import androidx.compose.foundation.layout.padding
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
+import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.unit.dp
 import com.example.demohomescreenui.R
-import com.example.demohomescreenui.components.service.ServiceCard
+import com.example.demohomescreenui.components.service.OtherServiceCard
+import com.example.demohomescreenui.components.service.PublicServiceCard
+import com.example.demohomescreenui.enums.ServiceIconStyle
 
 @Composable
 fun PublicService() {
-val publicIcons = listOf(
-    R.drawable.qrcode,
-    R.drawable.qrcode,
-    R.drawable.qrcode,
-    R.drawable.qrcode
-)
-    val otherServiceIcons = listOf(
-        R.drawable.qrcode,
-        R.drawable.qrcode,
-        R.drawable.qrcode,
-        R.drawable.qrcode
-    )
     Column(
         modifier = Modifier.padding(horizontal = 14.dp)
     ) {
-
         SectionTitleRow(
-
             leftTitle = "Public Service",
             rightTitle = "Other Services",
             onLeftClick = {},
@@ -45,21 +34,18 @@ val publicIcons = listOf(
             modifier = Modifier.fillMaxWidth(),
             horizontalArrangement = Arrangement.spacedBy(12.dp)
         ) {
-
-            ServiceCard(
+            PublicServiceCard(
                 modifier = Modifier.weight(1f),
-                topLeft = R.drawable.qrcode,
-                topRight = R.drawable.qrcode,
-                bottomLeft = R.drawable.qrcode,
-                smallIcons = publicIcons
+                topLeft = R.drawable.labor,
+                topRight = R.drawable.university,
+                bottomLeft = R.drawable.logo_loading,
             )
 
-            ServiceCard(
+            OtherServiceCard(
                 modifier = Modifier.weight(1f),
-                topLeft = R.drawable.qrcode,
-                topRight = R.drawable.qrcode,
-                bottomLeft = R.drawable.qrcode,
-                smallIcons = otherServiceIcons
+                topLeft = R.drawable._272908790_246548520989483_8091093659282453750_n,
+                topRight = R.drawable.cropped_logo,
+                bottomLeft = R.drawable.unnamed,
             )
         }
     }
