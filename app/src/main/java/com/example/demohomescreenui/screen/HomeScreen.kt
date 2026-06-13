@@ -68,48 +68,48 @@ fun HomeScreen(modifier: Modifier = Modifier) {
             state = listState,
             modifier = Modifier.fillMaxSize()
         ) {
-//            item {
-//                Spacer(modifier = Modifier.height(120.dp))
-//            }
+            item {
+                Spacer(modifier = Modifier.height(120.dp))
+            }
             item {
                 AnimatedVisibility(
                     visible = profileVisible,
                     enter = fadeIn(),
                     exit = fadeOut() + slideOutVertically()
                 ) {
-//                 Spacer(modifier = Modifier.height(20.dp))
-//                    ProfileSection()
+                 Spacer(modifier = Modifier.height(20.dp))
+                    ProfileSection()
                 }
             }
             item { Spacer(modifier = Modifier.height(20.dp)) }
-//            item { BalanceCard() }
+            item { BalanceCard() }
             item { Spacer(modifier = Modifier.height(20.dp)) }
-//            item { PaymentMenu() }
+            item { PaymentMenu() }
             item { Spacer(modifier = Modifier.height(10.dp)) }
-//            item { ServiceMenu() }
+            item { ServiceMenu() }
             item { Spacer(modifier = Modifier.height(10.dp)) }
-//            item { OtherServiceMenu() }
+            item { OtherServiceMenu() }
             item { Spacer(modifier = Modifier.height(10.dp)) }
-//            item { SectionTitle("Recommended", modifier = Modifier.padding(start = 12.dp)
-//            ) }
+            item { SectionTitle("Recommended", modifier = Modifier.padding(start = 12.dp)
+            ) }
             item { Spacer(modifier = Modifier.height(10.dp)) }
-//            item { SliderMenu() }
+            item { SliderMenu() }
             item {
                 Spacer(modifier = Modifier.height(10.dp))}
             item { SectionTitle("Cambodia Tourism", true, modifier = Modifier.padding(start = 12.dp), onClick = {}) }
             item { Spacer(modifier = Modifier.height(10.dp))}
-//            item { TourismSlider() }
+            item { TourismSlider() }
             item { Spacer(modifier = Modifier.height(10.dp))}
             item { Spacer(modifier = Modifier.height(10.dp))}
-//            item { PublicService() }
+            item { PublicService() }
             item { Spacer(modifier = Modifier.height(10.dp))}
             item { SectionTitle("Suggestions", showArrow = true, modifier = Modifier.padding(start = 12.dp), onClick = {})}
             item { Spacer(modifier = Modifier.height(10.dp))}
-//            item { SuggestionMenu() }
+            item { SuggestionMenu() }
             item { Spacer(modifier = Modifier.height(10.dp))}
             item { SectionTitle("Recent Transactions", modifier = Modifier.padding(start = 12.dp))}
             item { Spacer(modifier = Modifier.height(10.dp))}
-//            item { RecentTransaction() }
+            item { RecentTransaction() }
             item { Spacer(modifier = Modifier.height(10.dp))}
             item { SectionTitle("Other News", showArrow = true, modifier = Modifier.padding(start = 12.dp), onClick = {})}
             item { Spacer(modifier = Modifier.height(10.dp))}
@@ -119,11 +119,11 @@ fun HomeScreen(modifier: Modifier = Modifier) {
             item {Spacer(modifier= modifier.height(10.dp))}
             item { SpecialOffers() }
             item { Spacer(modifier = Modifier.height(10.dp))}
-            item { SectionTitle("Appearance")}
+            item { SectionTitle("Appearance", modifier= Modifier.padding(start = 12.dp)) }
             item { Spacer(modifier= modifier.height(10.dp))}
-            item { Appearance() }
+            item { Appearance()}
+            item { Spacer(modifier= modifier.height(10.dp))}
             item { Spacer(modifier = Modifier.height(230.dp))}
-
         }
         HeaderSection(
             modifier = Modifier.align(Alignment.TopCenter),

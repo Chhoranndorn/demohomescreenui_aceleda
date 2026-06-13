@@ -30,7 +30,6 @@ fun HeaderSection(
     modifier: Modifier = Modifier,
     showBackground: Boolean = false
 ) {
-
     val backgroundColor by animateColorAsState(
         targetValue =
             if (showBackground)
@@ -39,7 +38,6 @@ fun HeaderSection(
                 Color.Transparent,
         label = "HeaderBackground"
     )
-
     Box(
         modifier = modifier
             .fillMaxWidth()
@@ -52,7 +50,6 @@ fun HeaderSection(
                 .padding(horizontal = 14.dp),
             verticalAlignment = Alignment.CenterVertically
         ) {
-
             Image(
                 painter = painterResource(id = R.drawable.aceleda_logo__1_),
                 contentDescription = null,
@@ -68,21 +65,29 @@ fun HeaderSection(
                 modifier = Modifier
                     .weight(1f)
                     .padding(horizontal = 14.dp),
-                horizontalArrangement = Arrangement.End
+                horizontalArrangement = Arrangement.End,
             ) {
-                Icon(
-                    painter = painterResource(id = R.drawable.outline_notifications_24),
-                    contentDescription = null,
-                    modifier = Modifier.size(28.dp),
-                    tint = Color.White
-                )
+                IconButton(
+                    onClick = {}
+                ) {
+                    Icon(
+                        painter = painterResource(id = R.drawable.outline_notifications_24),
+                        contentDescription = null,
+                        modifier = Modifier.size(28.dp),
+                        tint = Color.White
+                    )
+                }
             }
 
-            Image(
-                painter = painterResource(id = R.drawable.qrcode),
-                contentDescription = null,
-                modifier = Modifier.size(30.dp)
-            )
+            IconButton(
+                onClick = {}
+            ) {
+                Image(
+                    painter = painterResource(id = R.drawable.qrcode),
+                    contentDescription = null,
+                    modifier = Modifier.size(30.dp)
+                )
+            }
         }
     }
 }
