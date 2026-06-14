@@ -35,6 +35,7 @@ import androidx.compose.ui.text.style.TextOverflow
 import com.example.demohomescreenui.R
 import com.example.demohomescreenui.components.Appearance
 import com.example.demohomescreenui.components.BalanceCard
+import com.example.demohomescreenui.components.FloatingQrButton
 import com.example.demohomescreenui.components.HeaderSection
 import com.example.demohomescreenui.components.OtherNews
 import com.example.demohomescreenui.components.OtherServiceMenu
@@ -100,7 +101,6 @@ fun HomeScreen(modifier: Modifier = Modifier) {
             item { Spacer(modifier = Modifier.height(10.dp))}
             item { TourismSlider() }
             item { Spacer(modifier = Modifier.height(10.dp))}
-            item { Spacer(modifier = Modifier.height(10.dp))}
             item { PublicService() }
             item { Spacer(modifier = Modifier.height(10.dp))}
             item { SectionTitle("Suggestions", showArrow = true, modifier = Modifier.padding(start = 12.dp), onClick = {})}
@@ -116,7 +116,7 @@ fun HomeScreen(modifier: Modifier = Modifier) {
             item { OtherNews() }
             item { Spacer(modifier = modifier.height(10.dp)) }
             item { SectionTitle("Special Offers", showArrow = true, modifier = Modifier.padding(start = 12.dp), onClick = {})}
-            item {Spacer(modifier= modifier.height(10.dp))}
+            item { Spacer(modifier= modifier.height(10.dp))}
             item { SpecialOffers() }
             item { Spacer(modifier = Modifier.height(10.dp))}
             item { SectionTitle("Appearance", modifier= Modifier.padding(start = 12.dp)) }
@@ -128,6 +128,12 @@ fun HomeScreen(modifier: Modifier = Modifier) {
         HeaderSection(
             modifier = Modifier.align(Alignment.TopCenter),
                     showBackground = showHeaderBackground
+        )
+        FloatingQrButton(
+            onClick = {},
+            modifier = Modifier
+                .align(Alignment.BottomCenter)
+                .padding(bottom = 30.dp)
         )
     }
 }

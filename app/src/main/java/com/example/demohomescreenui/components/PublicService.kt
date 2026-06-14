@@ -14,7 +14,6 @@ import androidx.compose.ui.unit.dp
 import com.example.demohomescreenui.R
 import com.example.demohomescreenui.components.service.OtherServiceCard
 import com.example.demohomescreenui.components.service.PublicServiceCard
-import com.example.demohomescreenui.enums.ServiceIconStyle
 
 @Composable
 fun PublicService() {

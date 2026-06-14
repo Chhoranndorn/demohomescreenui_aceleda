@@ -83,7 +83,6 @@ fun OtherServiceMenu(){
                             defaultElevation = 6.dp
                         )
                     )
-
                     {
                         Column(
                             modifier = Modifier

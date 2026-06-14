@@ -46,25 +46,32 @@ import androidx.compose.ui.unit.fontscaling.MathUtils.lerp
 import androidx.compose.ui.unit.sp
 import androidx.compose.ui.util.lerp
 import com.example.demohomescreenui.R
+import com.example.demohomescreenui.model.BannerItem
 import kotlinx.coroutines.delay
 import kotlin.math.absoluteValue
 @Composable
 fun TourismSlider() {
-    val imageList = listOf(
-        R.drawable.banner_advance_salary,
-        R.drawable.banner_bnpl,
-        R.drawable.banner_cross_border_japan_eng,
-        R.drawable.banner_salary_loan
-    )
-    val bannerTitles = listOf(
-        "Right now your Row doesn’t guarantee alignment because",
-        "Right now your Row doesn’t guarantee alignment because",
-        "Right now your Row doesn’t guarantee alignment because",
-        "Right now your Row doesn’t guarantee alignment because",
+    val banners = listOf(
+        BannerItem(
+            imageRes = R.drawable.banner_advance_salary,
+            title = "Right now your Row doesn’t guarantee alignment because"
+        ),
+        BannerItem(
+            imageRes = R.drawable.banner_bnpl,
+            title = "Right now your Row doesn’t guarantee alignment because"
+        ),
+        BannerItem(
+            imageRes = R.drawable.banner_cross_border_japan_eng,
+            title = "Right now your Row doesn’t guarantee alignment because"
+        ),
+        BannerItem(
+            imageRes = R.drawable.banner_salary_loan,
+            title = "Right now your Row doesn’t guarantee alignment because"
+        )
     )
 
     val startPage =
-        (Int.MAX_VALUE / 2) - ((Int.MAX_VALUE / 2) % imageList.size)
+        (Int.MAX_VALUE / 2) - ((Int.MAX_VALUE / 2) % banners.size)
 
     val pagerState = rememberPagerState(
         initialPage = startPage,
@@ -87,7 +94,8 @@ fun TourismSlider() {
             pageSpacing = 2.dp,
             userScrollEnabled = true
         ) { page ->
-            val actualPage = page % imageList.size
+            val actualPage = page % banners.size
+            val banner = banners[actualPage]
             val pageOffset = (
                     (pagerState.currentPage - page) +
                             pagerState.currentPageOffsetFraction
@@ -109,7 +117,7 @@ fun TourismSlider() {
                     modifier = Modifier.fillMaxSize()
                 ) {
                     Image(
-                        painter = painterResource(imageList[actualPage]),
+                        painter = painterResource(banner.imageRes),
                         contentDescription = null,
                         modifier = Modifier.fillMaxWidth(),
                         contentScale = ContentScale.Crop
@@ -153,7 +161,7 @@ fun TourismSlider() {
                         }
                         Spacer(modifier = Modifier.width(6.dp))
                         Text(
-                            text = bannerTitles[actualPage],
+                            text = banner.title,
                             color = Color.White,
                             fontSize = 14.sp,
                             maxLines = 1,
@@ -174,9 +182,9 @@ fun TourismSlider() {
         ) {
 
             val currentIndicator =
-                pagerState.currentPage % imageList.size
+                pagerState.currentPage % banners.size
 
-            repeat(imageList.size) { index ->
+            repeat(banners.size) { index ->
 
                 val isSelected =
                     currentIndicator == index

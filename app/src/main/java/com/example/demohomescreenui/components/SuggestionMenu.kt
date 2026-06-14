@@ -149,9 +149,7 @@ fun SuggestionMenu(){
                         }
                     }
                 }
-
             }
         }
-
     }
 }

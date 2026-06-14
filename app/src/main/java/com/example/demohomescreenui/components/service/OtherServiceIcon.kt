@@ -58,7 +58,6 @@ fun OtherServiceIcon(
             Image(
                 painter = painterResource(drawable),
                 contentDescription = null,
-//                modifier = Modifier.size(35.dp)
                 modifier = Modifier.size(35.dp).fillMaxSize().clip(RoundedCornerShape(0.dp))
             )
         }

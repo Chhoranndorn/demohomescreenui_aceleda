@@ -49,7 +49,6 @@ fun PublicServiceIcon(
             Image(
                 painter = painterResource(drawable),
                 contentDescription = null,
-//                modifier = Modifier.size(35.dp).fillMaxSize().clip(CircleShape)
                 modifier = Modifier.size(35.dp)
             )
         }

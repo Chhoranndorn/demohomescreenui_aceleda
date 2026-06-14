@@ -15,7 +15,6 @@ import androidx.compose.ui.Modifier
 import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.unit.dp
 import com.example.demohomescreenui.R
-import com.example.demohomescreenui.enums.ServiceIconStyle
 import com.example.demohomescreenui.model.SmallIconItem
 
 
@@ -26,6 +25,12 @@ fun PublicServiceCard(
     topRight: Int,
     bottomLeft: Int,
 ) {
+    val publicServiceSmallIcon = listOf(
+        SmallIconItem(R.drawable.logo_loading),
+        SmallIconItem(R.drawable.unnamed),
+        SmallIconItem(R.drawable.cropped_logo),
+        SmallIconItem(R.drawable._272908790_246548520989483_8091093659282453750_n)
+    )
     BaseServiceCard(
         modifier = modifier,
         containerColor = Color(0xFF4e5158),
@@ -38,12 +43,7 @@ fun PublicServiceCard(
         bottomLeft = {
             PublicServiceIcon(bottomLeft,showBorder = false)
         },
-        smallIcons = listOf(
-            SmallIconItem(R.drawable.logo_loading),
-            SmallIconItem(R.drawable.unnamed),
-            SmallIconItem(R.drawable.cropped_logo),
-            SmallIconItem(R.drawable._272908790_246548520989483_8091093659282453750_n)
-        )
+        smallIcons = publicServiceSmallIcon
     )
 }
 
@@ -54,6 +54,12 @@ fun OtherServiceCard(
     topRight: Int,
     bottomLeft: Int,
 ) {
+    val baseServiceCardSmallIcon = listOf(
+        SmallIconItem(R.drawable.emblem_of_the_ministry_of_national_defense__cambodia__svg, showBorder = true),
+        SmallIconItem(R.drawable.image_97),
+        SmallIconItem(R.drawable._2),
+        SmallIconItem(R.drawable._272908790_246548520989483_8091093659282453750_n)
+    )
     BaseServiceCard(
         modifier = modifier,
         containerColor = Color(0xFF4e5158),
@@ -66,11 +72,6 @@ fun OtherServiceCard(
         bottomLeft = {
             OtherServiceIcon(bottomLeft,showBorder = false,showBackground = true, backgroundColor = Color.Black)
         },
-        smallIcons = listOf(
-            SmallIconItem(R.drawable.emblem_of_the_ministry_of_national_defense__cambodia__svg, showBorder = true),
-            SmallIconItem(R.drawable.image_97),
-            SmallIconItem(R.drawable._2),
-            SmallIconItem(R.drawable._272908790_246548520989483_8091093659282453750_n)
-        )
+        smallIcons = baseServiceCardSmallIcon
     )
 }

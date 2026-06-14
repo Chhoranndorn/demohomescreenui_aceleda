@@ -48,7 +48,6 @@ fun ServiceMenu(){
         ServiceItemModel(serviceName ="Deposits", serviceImg = R.drawable.time),
         ServiceItemModel(serviceName ="Loans", serviceImg = R.drawable.loan),
         ServiceItemModel(serviceName ="Quick Cash", serviceImg = R.drawable.money),
-
         )
     Column(
         modifier = Modifier.padding(horizontal = 10.dp)
